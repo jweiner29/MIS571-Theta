@@ -1,0 +1,18 @@
+#example code from Tutorials: Need to replicate with updated files. 
+
+package com.example.tutorial_3jenweiner.constant;
+
+
+/**
+ * Constants related to database file
+ * Such as file path and file name
+ */
+public abstract class DBConstant
+{
+    //database file directory
+    public static String DATABASE_PATH = "/data/data/com.example.tutorial_3jenweiner/databases";
+    //database file name
+    public static String DATABASE_FILE = "LIB.db";
+    //database version
+    public static int DATABASE_VERSION = 1;
+}
