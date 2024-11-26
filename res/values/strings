@@ -1,1 +1,7 @@
-
+<resources>
+    <string name="app_name">MIS571_FinalProject</string>
+    <string name="StudentButton">Students</string>
+    <string name="InstructorButton">Instructors</string>
+    <string name="AdminButton">Admin</string>
+    <string name="Weclome">Welcome to the app!</string>
+</resources>
