@@ -1,0 +1,20 @@
+<resources>
+    <string name="app_name">MIS571_FinalProject</string>
+    <string name="StudentButton">Students</string>
+    <string name="InstructorButton">Instructors</string>
+    <string name="AdminButton">Admin</string>
+    <string name="Weclome">Welcome to the app!</string>
+    <string name="Register">Register</string>
+    <string name="GoMain">Main Menu</string>
+    <string name="first_class">First Class?</string>
+    <string name="StudentID">Student ID:</string>
+    <string name="ClassID">Class ID:</string>
+    <string name="SignUp">Sign Up</string>
+    <string name="FirstName">First Name:</string>
+    <string name="LastName">Last Name:</string>
+    <string name="DOB">Date of birth:</string>
+    <string name="Email">Email:</string>
+    <string name="Phone">Phone:</string>
+    <string name="JoinButton">Join</string>
+    <string name="ThankYou">Thank you for registering! We look forward to seeing you soon!</string>
+</resources>
