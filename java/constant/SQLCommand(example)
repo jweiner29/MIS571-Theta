@@ -1,4 +1,4 @@
-package com.example.tutorial_3jenweiner.constant;
+package com.example.mis571_finalproject.constant;
 
 /**
  * SQL commands
@@ -7,25 +7,28 @@ package com.example.tutorial_3jenweiner.constant;
 
 public abstract class SQLCommand
 {
-    //query all students
-    public static String QUERY_STUDENT = "select stid, stname from Student";
-    //list all data in books table
-    public static String QUERY_1 = "select lbcallnum, lbtitle from libbook";
-    //List the call numbers of books with the title ‘Database Management’
-    public static String QUERY_2 = "select lbcallnum from libbook where lbtitle like '%Database Management%'";
-    public static String QUERY_3 = "select * from CheckOut";
-    public static String QUERY_4 = "select lbcallnum from CheckOut where coreturned = 'N'";
-    public static String QUERY_5 = "select lbcallnum, coduedate from CheckOut";
-    public static String QUERY_6 = "select stid from CheckOut where coreturned = 'N'";
-    public static String QUERY_7 = "select stid, stname from Student where stname = 'Gibson, J.'";
-    public static String RETURN_BOOK = "update CheckOut set coreturned=? where stid=? and lbcallnum=?";
-    public static String CHECK_BOOK = "insert into CheckOut(stid,lbcallnum,coduedate,coreturned) values(?,?,?,?)";
-    //checkout summary
-    public static String CHECKOUT_SUMMARY = "select strftime('%m',coduedate) as month,count(*) as total from checkout " +
-            "where strftime('%Y',coduedate)='2019' " +
-            "group by month order by total desc";
-    public static String CHECKOUT_LIST = "select CheckOut.stid as _id, lbtitle, coduedate,coreturned,cofine,stname from CheckOut,Student,LibBook " +
-            "where Student.stid=Checkout.stid and LibBook.lbcallnum=CheckOut.lbcallnum";
+    //query upcoming classes
+    public static String Schedule =
+            "SELECT \n" +
+            "    C.ClDate AS 'Class Date',\n" +
+            "    C.ClTime AS 'Class Time',\n" +
+            "    CT.CTName AS 'Class Name',\n" +
+            "    CT.CTDescription AS Description,\n" +
+            "    CT.CTDuration AS 'Duration (min)',\n" +
+            "    CT.CTPrice AS 'Price ($)',\n" +
+            "    C.ClLocAddress AS Location,\n" +
+            "    I.InstName AS Instructor,\n" +
+            "    (C.ClSpotsAvail - COUNT(R.RegID)) AS 'Remaining Spots'\n" +
+            "FROM \n" +
+            "    CLASS C\n" +
+            "JOIN \n" +
+            "    CLASS_TYPE CT ON C.CTID = CT.CTID\n" +
+            "JOIN \n" +
+            "    INSTRUCTOR I ON C.InstID = I.InstID\n" +
+            "LEFT JOIN \n" +
+            "    REGISTRATION R ON C.ClID = R.ClID\n" +
+            "WHERE C.ClDate >= date('now')\n" +
+            "GROUP BY \n" +
+            "    C.ClID, C.ClDate, C.ClTime, CT.CTName, CT.CTDescription, CT.CTDuration, CT.CTPrice, C.ClLocAddress, I.InstName, C.ClSpotsAvail;\n" +
+            "ORDER BY C.ClDate";
 }
-
-
