@@ -1,4 +1,4 @@
-package com.example.tutorial_3jenweiner.util;
+package com.example.mis571_finalproject.util;
 
 import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
