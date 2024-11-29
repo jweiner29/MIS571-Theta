@@ -10,7 +10,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="100dp"
-        android:background="@color/material_dynamic_tertiary40"
+        android:background="#4E2C78"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme" />
 
@@ -21,7 +21,7 @@
         android:layout_marginTop="25dp"
         android:text="@string/Weclome"
         android:textAlignment="center"
-        android:textColor="@color/material_dynamic_neutral70"
+        android:textColor="@color/white"
         android:textSize="34sp"
         android:textStyle="bold" />
 
