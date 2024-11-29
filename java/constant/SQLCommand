@@ -31,4 +31,10 @@ public abstract class SQLCommand
             "GROUP BY \n" +
             "    C.ClID, C.ClDate, C.ClTime, CT.CTName, CT.CTDescription, CT.CTDuration, CT.CTPrice, C.ClLocAddress, I.InstName, C.ClSpotsAvail;\n" +
             "ORDER BY C.ClDate";
+    //Insert Attendee
+    //Insert Registration
+    //Insert Class
+    //View Feedback
+    //Update Feedback
+    //View Profitability 
 }
