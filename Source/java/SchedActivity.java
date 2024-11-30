@@ -2,6 +2,7 @@ package com.example.mis571_finalproject;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.util.Log;
@@ -20,6 +21,8 @@ import com.example.mis571_finalproject.constant.SQLCommand;
 import com.example.mis571_finalproject.util.DBOperator;
 import com.example.mis571_finalproject.view.TableView;
 
+import java.io.IOException;
+
 public class SchedActivity extends Activity implements OnClickListener {
 
     Button registerBtn, mainBtn;
@@ -28,11 +31,23 @@ public class SchedActivity extends Activity implements OnClickListener {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.student_sched);
-        //copy database file
-        try{
-        DBOperator.copyDB(getBaseContext());
-        }catch(Exception e){
-            e.printStackTrace();
+        // Check if the database has already been copied
+        SharedPreferences prefs = getSharedPreferences("AppPrefs", MODE_PRIVATE);
+        boolean isDBCopied = prefs.getBoolean("isDBCopied", false);
+
+        if (!isDBCopied) {
+            try {
+                DBOperator.copyDB(getBaseContext());
+
+                // Mark the database as copied
+                SharedPreferences.Editor editor = prefs.edit();
+                editor.putBoolean("isDBCopied", true);
+                editor.apply();
+
+            } catch (IOException e) {
+                e.printStackTrace();
+                Toast.makeText(this, "Error copying database", Toast.LENGTH_LONG).show();
+            }
         }
         registerBtn = (Button) this.findViewById(R.id.RegisterButton);
         registerBtn.setOnClickListener(this);
@@ -64,7 +79,7 @@ public class SchedActivity extends Activity implements OnClickListener {
             headerRow.setPadding(10, 10, 10, 10);
 
             //Add column headers
-            String[] headers = {"Class Date", "Class Time", "Class Name", "Description", "Duration (min)", "Price ($)", "Location", "Instructor", "Remaining Spots"};
+            String[] headers = {"Class ID", "Class Date", "Class Time", "Class Name", "Description", "Duration (min)", "Price ($)", "Location", "Instructor", "Remaining Spots"};
             for (String header : headers) {
                 TextView textView = new TextView(this);
                 textView.setText(header);
