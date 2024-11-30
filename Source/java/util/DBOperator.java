@@ -4,6 +4,7 @@ import android.content.Context;
 import android.database.Cursor;
 import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
+import android.util.Log;
 
 import com.example.mis571_finalproject.constant.DBConstant;
 
@@ -50,20 +51,23 @@ public class DBOperator
             dir.mkdirs(); // Create the directory
         }
         File file = new File(path);
-        if (!file.exists()){
-            DBOpenHelper dbhelper = new DBOpenHelper(context, path ,1);
-            dbhelper.getWritableDatabase();
-            InputStream is = context.getAssets().open(DBConstant.DATABASE_FILE);
-            OutputStream os = new FileOutputStream(file);
-            byte[] buffer = new byte[1024];
-            int length;
-            while ((length = is.read(buffer))>0){
-                os.write(buffer, 0, length);
-            }
-            is.close();
-            os.flush();
-            os.close();
+        if (file.exists()) {
+            Log.d("DBOperator", "Database already exists, skipping copy.");
+            return;
         }
+
+        // Copy the database from assets
+        InputStream is = context.getAssets().open(DBConstant.DATABASE_FILE);
+        OutputStream os = new FileOutputStream(file);
+        byte[] buffer = new byte[1024];
+        int length;
+        while ((length = is.read(buffer)) > 0) {
+            os.write(buffer, 0, length);
+        }
+        is.close();
+        os.flush();
+        os.close();
+        Log.d("DBOperator", "Database copied successfully.");
     }
 
     /**
@@ -111,6 +115,9 @@ public class DBOperator
     public void closeDB()
     {
         if (db!=null) db.close();
+    }
+
+    public void close() {
     }
 }
 
