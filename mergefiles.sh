@@ -1,0 +1,31 @@
+cp -r "Source/Gradle_Scripts/build (1).gradle" "AppDir/app/build.gradle"
+cp -r "Source/Gradle_Scripts/build.gradle" "AppDir/build.gradle"
+cp -r "Source/Gradle_Scripts/gradle (1).properties" "AppDir/gradle.properties"
+
+
+
+cp -r "Source/Gradle_Scripts/gradle-wrapper.properties" "AppDir/gradle/wrapper/gradle-wrapper.properties"
+
+
+cp -r "Source/Gradle_Scripts/settings.gradle" "AppDir/settings.gradle"
+cp -r "Source/java/FirstClassActivity.java" "AppDir/app/src/main/java/com/example/mis571_finalproject/FirstClassActivity.java"
+cp -r "Source/java/MainActivity.java" "AppDir/app/src/main/java/com/example/mis571_finalproject/MainActivity.java"
+cp -r "Source/java/ProfitActivity.java" "AppDir/app/src/main/java/com/example/mis571_finalproject/ProfitActivity.java"
+cp -r "Source/java/RegisterActivity.java" "AppDir/app/src/main/java/com/example/mis571_finalproject/RegisterActivity.java"
+cp -r "Source/java/SchedActivity.java" "AppDir/app/src/main/java/com/example/mis571_finalproject/SchedActivity.java"
+cp -r "Source/java/ThankYouActivity.java" "AppDir/app/src/main/java/com/example/mis571_finalproject/ThankYouActivity.java"
+cp -r "Source/java/constant/DBConstant.java" "AppDir/app/src/main/java/com/example/mis571_finalproject/constant/DBConstant.java"
+cp -r "Source/java/constant/SQLCommand.java" "AppDir/app/src/main/java/com/example/mis571_finalproject/constant/SQLCommand.java"
+cp -r "Source/java/util/DBOpenHelper.java" "AppDir/app/src/main/java/com/example/mis571_finalproject/util/DBOpenHelper.java"
+cp -r "Source/java/util/DBOperator.java" "AppDir/app/src/main/java/com/example/mis571_finalproject/util/DBOperator.java"
+cp -r "Source/java/view/TableView.java" "AppDir/app/src/main/java/com/example/mis571_finalproject/view/TableView.java"
+cp -r "Source/manifests/AndroidManifest.xml" "AppDir/app/src/main/AndroidManifest.xml"
+cp -r "Source/res/layout/firstclass.xml" "AppDir/app/src/main/res/layout/firstclass.xml"
+cp -r "Source/res/layout/main_menu.xml" "AppDir/app/src/main/res/layout/main_menu.xml"
+cp -r "Source/res/layout/profit.xml" "AppDir/app/src/main/res/layout/profit.xml"
+cp -r "Source/res/layout/register.xml" "AppDir/app/src/main/res/layout/register.xml"
+cp -r "Source/res/layout/student_sched.xml" "AppDir/app/src/main/res/layout/student_sched.xml"
+cp -r "Source/res/layout/thankyou.xml" "AppDir/app/src/main/res/layout/thankyou.xml"
+cp -r "Source/res/values/colors.xml" "AppDir/app/src/main/res/values/colors.xml"
+cp -r "Source/res/values/strings.xml" "AppDir/app/src/main/res/values/strings.xml"
+cp -r "Source/res/values/themes.xml" "AppDir/app/src/main/res/values/themes.xml"
