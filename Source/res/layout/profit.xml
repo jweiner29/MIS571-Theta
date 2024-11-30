@@ -30,19 +30,19 @@
                 android:id="@+id/ClassFees"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Class Fees" />
+                android:text="@string/class_fees" />
 
             <com.google.android.material.tabs.TabItem
                 android:id="@+id/InstFees"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Instructor Fees" />
+                android:text="@string/instructor_fees" />
 
             <com.google.android.material.tabs.TabItem
                 android:id="@+id/Profit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Profit" />
+                android:text="@string/Profit" />
         </com.google.android.material.tabs.TabLayout>
 
         <Button
