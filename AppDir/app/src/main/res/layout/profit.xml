@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/profitability"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="25dp"
+            android:text="@string/Profit"
+            android:textAlignment="center"
+            android:textAllCaps="false"
+            android:textSize="34sp"
+            android:textStyle="bold" />
+
+        <com.google.android.material.tabs.TabLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp">
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/ClassFees"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Class Fees" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/InstFees"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Instructor Fees" />
+
+            <com.google.android.material.tabs.TabItem
+                android:id="@+id/Profit"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Profit" />
+        </com.google.android.material.tabs.TabLayout>
+
+        <Button
+            android:id="@+id/GoMain2Button"
+            android:layout_width="150dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="bottom|center_horizontal"
+            android:layout_marginTop="400dp"
+            android:layout_marginBottom="5dp"
+            android:text="@string/GoMain" />
+
+    </LinearLayout>
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
