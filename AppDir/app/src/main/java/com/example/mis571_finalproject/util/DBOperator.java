@@ -39,6 +39,14 @@ public class DBOperator
         if (instance==null) instance = new DBOperator();
         return instance;
     }
+
+    /**
+     * Get the SQLiteDatabase instance
+     * @return SQLiteDatabase instance
+     */
+    public SQLiteDatabase getDatabase() {
+        return db;
+    }
     /**
      * Copy database file
      * From assets folder (in the project) to android folder (on device)
@@ -119,5 +127,7 @@ public class DBOperator
 
     public void close() {
     }
-}
 
+
+
+}

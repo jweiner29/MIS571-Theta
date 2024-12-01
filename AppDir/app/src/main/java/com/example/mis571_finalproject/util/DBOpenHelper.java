@@ -20,5 +20,3 @@ public class DBOpenHelper extends SQLiteOpenHelper {
     }
 
 }
-
-
