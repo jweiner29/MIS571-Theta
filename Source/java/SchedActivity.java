@@ -55,7 +55,7 @@ public class SchedActivity extends Activity implements OnClickListener {
         mainBtn.setOnClickListener(this);
         scrollview = (ScrollView) this.findViewById(R.id.scrollview_schedule);
 
-        // Automatically populate scrollvoew with query results
+        // Automatically populate scrollview with query results
         populateScrollView();
     }
 
