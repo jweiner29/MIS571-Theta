@@ -3,3 +3,5 @@
 **/app/build/
 **/local.properties
 *.bak
+.idea/workspace.xml
+.idea/workspace.xml
