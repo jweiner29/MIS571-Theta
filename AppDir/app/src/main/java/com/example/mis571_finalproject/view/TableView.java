@@ -82,5 +82,3 @@ public class TableView extends TableLayout
         cursor.close();
     }
 }
-
-

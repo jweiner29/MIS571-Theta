@@ -1,7 +1,11 @@
 package com.example.mis571_finalproject.view;
 
+import android.content.Context;
+import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Paint.Align;
+
 import com.example.mis571_finalproject.util.Pair;
-import java.util.List;
 
 import org.achartengine.ChartFactory;
 import org.achartengine.chart.BarChart;
@@ -9,10 +13,8 @@ import org.achartengine.model.CategorySeries;
 import org.achartengine.model.XYMultipleSeriesDataset;
 import org.achartengine.renderer.XYMultipleSeriesRenderer;
 import org.achartengine.renderer.XYSeriesRenderer;
-import android.content.Context;
-import android.content.Intent;
-import android.graphics.Color;
-import android.graphics.Paint.Align;
+
+import java.util.List;
 
 public class ChartGenerator {
     private static double yMaxNum = 0.0;
@@ -53,7 +55,6 @@ public class ChartGenerator {
 
         mRenderer.addSeriesRenderer(renderer);
     }
-
     private static XYMultipleSeriesDataset createDataSet(List<Pair> pairList) {
         XYMultipleSeriesDataset mDataset = new XYMultipleSeriesDataset();
         CategorySeries series = new CategorySeries("Number of Checkout / Month");
@@ -97,3 +98,5 @@ public class ChartGenerator {
     }
 
 }
+
+

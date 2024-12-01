@@ -21,6 +21,17 @@
             android:textSize="34sp"
             android:textStyle="bold" />
 
+        <ScrollView
+            android:id="@+id/scrollview_Profit"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" />
+        </ScrollView>
+
         <com.google.android.material.tabs.TabLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -30,19 +41,19 @@
                 android:id="@+id/ClassFees"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/class_fees" />
+                android:text="Class Fees" />
 
             <com.google.android.material.tabs.TabItem
                 android:id="@+id/InstFees"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/instructor_fees" />
+                android:text="Instructor Fees" />
 
             <com.google.android.material.tabs.TabItem
                 android:id="@+id/Profit"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/Profit" />
+                android:text="Profit" />
         </com.google.android.material.tabs.TabLayout>
 
         <Button

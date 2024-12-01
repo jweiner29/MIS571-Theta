@@ -25,6 +25,16 @@
         <activity android:name=".FirstClassActivity" />
         <activity android:name=".ThankYouActivity" />
         <activity android:name=".ProfitActivity" />
+        <activity android:name=".CreateClassActivity" />
+        <activity android:name=".CancelClassActivity" />
+        <activity android:name=".CreateSuccessActivity" />
+        <activity android:name=".CancelSuccessActivity" />
+        <activity android:name=".InstMenuActivity" />
+        <activity android:name=".AllClassActivity" />
+        <activity android:name=".AdminMenuActivity" />
+        <activity android:name=".AllRegActivity" />
+        <activity android:name=".FeedbackActivity" />
+
     </application>
 
 </manifest>

@@ -1,4 +1,4 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<resources>
     <string name="app_name">MIS571_FinalProject</string>
     <string name="StudentButton">Students</string>
     <string name="InstructorButton">Instructors</string>
@@ -17,8 +17,15 @@
     <string name="Phone">Phone:</string>
     <string name="JoinButton">Join</string>
     <string name="ThankYou">Thank you for registering! We look forward to seeing you soon!</string>
+    <string name="Profit">Profitability</string>
     <string name="Address">Address:</string>
-    <string name="Profit">Profit</string>
-    <string name="class_fees">Class Fees</string>
-    <string name="instructor_fees">Instructor Fees</string>
+    <string name="CreateButton">Create a class</string>
+    <string name="CancelButton">Cancel a class</string>
+    <string name="FeedbackButton">View feedback</string>
+    <string name="AddClassButton">Add Class</string>
+    <string name="DeleteButton">Cancel Class</string>
+    <string name="CreateSuccess">Success! Your class has been added to the schedule.</string>
+    <string name="CancelSuccess">Success! Your class has been removed to the schedule.</string>
+    <string name="ClassesButton">View all classes</string>
+    <string name="RegButton">View all registrations</string>
 </resources>

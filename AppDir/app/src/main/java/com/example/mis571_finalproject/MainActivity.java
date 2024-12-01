@@ -57,14 +57,12 @@ public class MainActivity extends android.app.Activity implements OnClickListene
             this.startActivity(intent);
 
         }else if (id==R.id.InstructorButton){
-            Intent intent = new Intent(this, MainActivity.class);
+            Intent intent = new Intent(this, InstMenuActivity.class);
             this.startActivity(intent);
 
         }else if (id==R.id.AdminButton) {
-            Intent intent = new Intent(this, ProfitActivity.class);
+            Intent intent = new Intent(this, AdminMenuActivity.class);
             this.startActivity(intent);
         }
-        }
     }
-
-
+}

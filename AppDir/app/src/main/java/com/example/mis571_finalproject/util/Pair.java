@@ -27,4 +27,3 @@ public class Pair {
         this.number = number;
     }
 }
-

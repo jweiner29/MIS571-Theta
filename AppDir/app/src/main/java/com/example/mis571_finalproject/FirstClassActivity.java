@@ -82,37 +82,34 @@ public class FirstClassActivity extends Activity implements OnClickListener {
     }
 
     private void insertNewAttendee() {
-        String[] attendeeArgs = getAttendeeArgs(true);
-
-        // Validate input
-        for (String arg : attendeeArgs) {
-            if (arg == null || arg.isEmpty()) {
-                Toast.makeText(this, "Please fill all fields.", Toast.LENGTH_LONG).show();
-                return;
-            }
-        }
-
         SQLiteDatabase db = null;
+        int newAttendeeId = -1;
+
         try {
+            db = DBOperator.getInstance().getDatabase();
+
+            // Prepare attendee arguments with the generated ID
+            String[] attendeeArgs = getAttendeeArgs(true);
+
             // Execute the AddAttendee SQL command using DBOperator
             String sql = SQLCommand.AddAttendee;
             DBOperator.getInstance().execSQL(sql, attendeeArgs);
 
-            // Retrieve the ID of the newly inserted attendee
+            // Generate a new attendee ID (if applicable) or retrieve the next ID
             Cursor cursor = db.rawQuery("SELECT last_insert_rowid()", null);
-            int newAttendeeId = -1;
             if (cursor.moveToFirst()) {
                 newAttendeeId = cursor.getInt(0);
             }
             cursor.close();
 
-            // Add registration using the new AttendID
-            if (newAttendeeId != -1) {
-                Log.d("FirstClassActivity", "New Attendee ID: " + newAttendeeId);
-                addRegistration(newAttendeeId);
-            } else {
-                Log.e("FirstClassActivity", "Failed to retrieve new AttendID.");
+            if (newAttendeeId == -1) {
+                throw new Exception("Failed to generate a new Attendee ID.");
             }
+
+            // Add registration using the new AttendID
+            Log.d("FirstClassActivity", "New Attendee ID: " + newAttendeeId);
+            addRegistration(newAttendeeId);
+
             // Navigate to Thank You screen
             Intent intent = new Intent(this, ThankYouActivity.class);
             startActivity(intent);
@@ -121,9 +118,7 @@ public class FirstClassActivity extends Activity implements OnClickListener {
             Log.e("FirstClassActivity", "Error inserting attendee: " + e.getMessage());
             Toast.makeText(this, "Failed to add attendee. Please try again.", Toast.LENGTH_LONG).show();
         } finally {
-            if (db != null) {
-                db.close();
-            }
+
         }
     }
 
@@ -141,9 +136,6 @@ public class FirstClassActivity extends Activity implements OnClickListener {
             Log.e("FirstClassActivity", "Error adding registration: " + e.getMessage());
             Toast.makeText(this, "Failed to register attendee. Please try again.", Toast.LENGTH_LONG).show();
         } finally {
-            if (db != null) {
-                db.close();
-            }
         }
     }
 
@@ -181,13 +173,12 @@ public class FirstClassActivity extends Activity implements OnClickListener {
 
     private String[] getRegistrationArgs(int attendeeId) {
         String[] args = new String[3];
-            // ClassId
-            args[0] = classIdEdit.getText().toString();
-            // AttendId
-            args[1] = String.valueOf(attendeeId);
-            // Status
-            args[2] = "Confirmed";
-            return args;
-        }
+        // ClassId
+        args[0] = classIdEdit.getText().toString();
+        // AttendId
+        args[1] = String.valueOf(attendeeId);
+        // Status
+        args[2] = "Confirmed";
+        return args;
     }
-
+}
